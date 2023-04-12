@@ -1,8 +1,8 @@
 {% extends 'index.html' %}
 
 {% block content %}
-  <h1>Select a chat to the left or start a new conversation</h1>
-
+  <h1>Select a chat to the left, search below, or start a new conversation</h1>
+  <br><br><br>
   <form method="get" class="new-conversation-form">
     {% csrf_token %}
       {{ conversation_search_form.as_p }}

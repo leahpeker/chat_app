@@ -3,6 +3,7 @@
 
 {% block content %}
 <h1>{{ conversation.title }}</h1>
+<body>Started: {{ conversation.start_date|date:"F d" }}</body>
 
 <ul class="message-list">
   {% for message in messages %}

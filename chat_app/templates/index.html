@@ -11,7 +11,8 @@
         <ul>
             {% block sidebar %}
             <ul class="conversations">
-              <li class="conversation-list-item"><a href="{% url 'home' %}">Home</a></li>
+              <li class="conversation-list-item"><a href="{% url 'home' %}">Home / Search </a></li>
+                <li class="conversation-list-item">Conversations</li>
                 {% for conversation in conversations %}
                     <li class="conversation-list-item">
                         <a href="{% url 'conversation_detail' conversation.id %}">{{ conversation.title }}</a>
