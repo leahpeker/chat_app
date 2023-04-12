@@ -5,40 +5,12 @@
   </p>
 
 
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+This project was an exciting way to get a basic insight into how chat apps work. The app includes
+all models, forms, and views required to put the app together. It also includes unit testing and integration
+testing. I did my best to create a holistic testing framework. I also added some CSS to get a general flow. 
 
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -55,6 +27,7 @@ Homebrew
   ```sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
+You may be prompted to do a few additional steps to add brew to your PATH. Follow the steps given in the terminal.
 
 Python3.10
 ```shell
@@ -77,9 +50,15 @@ brew install python@3.10
    python3.10 -m venv myenv
    ```
 4. Activate virtual environment
-   ```sh
-   source venv/bin/activate
-   ```
+* Mac
+  ```sh
+  source venv/bin/activate
+  ```
+* Windows
+  ```sh
+   myenv\Scripts\Activate
+  ```
+   
 5. Install requirements
    ```sh
    pip3 install -r requirements.txt
@@ -106,8 +85,11 @@ also start new conversations, send new messages, and reply with new thoughts. On
 users can also search for conversations by title and search for messages by content. 
 
 The start date for each new conversation is automatically added to the database and is displayed
-under the conversation title when you click into a conversation.
+under the conversation title when you click into a conversation. The user is inputting the date info without 
+even knowing.
 
 The send date and time for both messages and message thoughts are automatically recorded in the 
-database and are displayed within the conversation.
+database and are displayed within the conversation. The user is inputting the datetime info without 
+even knowing.
 
+The app will be delivered with some conversations pre-loaded into the Sqlite database. Enjoy!  

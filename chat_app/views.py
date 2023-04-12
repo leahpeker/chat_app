@@ -119,7 +119,6 @@ def conversation_search_results(request, title):
 
     #context contains search title and a list of conversation pks
     context = request.session['search_context']
-    print(f"context: {context}")
     conversation_ids = context['filtered_conversations']
     filtered_conversations = Conversation.objects.filter(id__in=conversation_ids)
     context['filtered_conversations'] = filtered_conversations
@@ -132,7 +131,6 @@ def message_search_results(request, search_text):
 
     #context contains search text and a list of message pks
     context = request.session['search_context']
-    print(f"context: {context}")
     message_ids = context['filtered_messages']
     filtered_messages = Message.objects.filter(id__in=message_ids)
     context['filtered_messages'] = filtered_messages
