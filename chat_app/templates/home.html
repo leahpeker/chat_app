@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h1>Select a chat to the left or start a new conversation</h1>
+
+  <form method="get" class="new-conversation-form">
+    {% csrf_token %}
+      {{ conversation_search_form.as_p }}
+    <button type="submit" class="conversation-form-submit" name="conversation_search_form_submit">Search conversations</button>
+  </form>
+  <br><br><br><br>
+  <form method="get" class="new-conversation-form">
+    {% csrf_token %}
+      {{ message_search_form.as_p }}
+    <button type="submit" class="conversation-form-submit" name="message_search_form_submit">Search messages</button>
+  </form>
+
+{% endblock %}

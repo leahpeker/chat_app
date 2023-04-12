@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+    <h1>Search results for conversations titled: "{{ title }}"</h1>
+    <ul class="conversations">
+        {% for conversation in filtered_conversations %}
+          <li class="conversation-list-item">
+              <a href="{% url 'conversation_detail' conversation.id %}">{{ conversation.title }}</a>
+          </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

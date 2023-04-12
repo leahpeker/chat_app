@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<h1>{{ conversation.title }}</h1>
+
+<ul class="message-list">
+  {% for message in messages %}
+    <li class="message-item">
+      <div class="message-content">{{ message.text }}</div>
+      <div class="message-timestamp">{{ message.date_sent|date:"F d, Y H:i" }}</div>
+      <ul class="thought-list">
+        {% for thought in message.messagethought_set.all %}
+          <li class="thought-item">
+            <div class="thought-content">{{ thought.text }}</div>
+            <div class="thought-timestamp">{{ thought.date_sent|date:"F d, Y H:i" }}</div>
+          </li>
+        {% endfor %}
+        <div class="new-thought-form">
+          <form method="post">
+            {% csrf_token %}
+            {{ thought_form.text }}
+            <input type="hidden" name="message" value="{{ message.id }}">
+            <button type="submit" class="thought-form-submit" name="thought_form_submit">Send Thought</button>
+          </form>
+        </div>
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="new-message-form">
+  <form method="post">
+    {% csrf_token %}
+      {{ message_form.text }}
+    <button type="submit" class="message-form-submit" name="message_form_submit">Send Message</button>
+  </form>
+</div>
+{% endblock %}

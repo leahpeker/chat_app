@@ -1,0 +1,308 @@
+#sidebar {
+    float: left;
+    width: 20%;
+    word-break: break-word;
+}
+#content {
+    margin-left: 20%; /* Same width as the sidebar */
+}
+
+/* Reset default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0px 10px;
+}
+
+/* Set font family and size for body text */
+body {
+    font-family: "Helvetica", sans-serif;
+    font-size: 16px;
+    padding: 30px;
+}
+
+/* Set font family and size for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+}
+
+/* Set font family and size for links */
+a {
+    font-family: "Helvetica", sans-serif;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Set font family and size for form elements */
+input, textarea {
+    font-family: "Helvetica", sans-serif;
+    font-size: 16px;
+}
+
+.conversations {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+
+}
+
+.conversations a {
+    display: block;
+    padding: 10px;
+    color: #007bff;
+    text-decoration: none;
+
+}
+
+.conversations a:hover {
+    background-color: #f8f9fa;
+}
+
+/* CSS for conversation-list items */
+.conversation-list-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.conversation-list-item:hover {
+  background-color: #f8f9fa;
+}
+
+.conversation-list-item .conversation-title {
+  font-weight: bold;
+
+}
+
+.conversation-list-item .conversation-last-message {
+  font-size: 12px;
+  color: #666;
+}
+
+.conversation-list-item .conversation-unread-count {
+  margin-left: 5px;
+  padding: 2px 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+
+}
+
+
+/* CSS for NewConversationForm */
+.new-conversation-form {
+  margin-top: 0px; /* Add margin from top for spacing */
+}
+
+.new-conversation-form input[type="text"] {
+  width: 100%; /* Set the width of the input field to 100% */
+  padding: 10px; /* Add padding for spacing */
+  margin-bottom: 10px; /* Add margin from bottom for spacing */
+  box-sizing: border-box; /* Set box-sizing to border-box to include padding in width calculation */
+}
+
+.new-conversation-form input[type="submit"] {
+  width: 50%;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition effect for smooth hover */
+  background-color: #6c757d;
+}
+
+.new-conversation-form input[type="submit"]:hover {
+  background-color: #0056b3; /* Update background color on hover */
+}
+
+.new-conversation-form label {
+  display: none;
+}
+
+/* Style for new_message form */
+.new-message-form {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    position: relative;
+    width: 60%;
+}
+
+
+.new-message-form input[type="text"],
+.new-message-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    height: 100px;
+}
+
+.new-message-form input[type="text"]:focus,
+.new-message-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    overflow: auto;
+}
+
+
+label[for=id_message] {
+    display: none;
+}
+
+
+/* CSS for new-thought-form */
+.new-thought-form {
+  margin-top: 10px;
+  position: relative;
+}
+
+.new-thought-form input {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-left: 20px;
+  width: calc(100% - 20px - 140px);
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: content-box;
+}
+
+.new-thought-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  font-size: 10px;
+  color: #333;
+  overflow: scroll;
+}
+
+label[for=id_thought] {
+    display: none;
+}
+
+label[for=id_conversation] {
+    display: none;
+}
+
+/* CSS for send message button */
+.message-form-submit {
+  position: absolute;
+  right: 0;
+  margin-bottom: 50px;
+  background-color: #6c757d;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/* CSS for send thought button */
+.thought-form-submit {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  margin-bottom: 0px;
+  background-color: #6c757d;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* CSS for send thought button */
+.conversation-form-submit {
+  position: relative;
+  bottom: 0px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  background-color: #6c757d;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* CSS for hover effect on buttons */
+.message-form-submit:hover, .thought-form-submit:hover {
+  background-color: #0062cc;
+}
+
+/* CSS for active/focused state on buttons */
+.message-form-submit:focus, .thought-form-submit:focus {
+  outline: none;
+}
+
+/* Style for the list of messages */
+.message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for each message item */
+.message-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 60%;
+    word-wrap: break-word;
+}
+
+.message-content {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Style for the list of thoughts */
+.thought-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for each thought item */
+.thought-item {
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #e8e8e8;
+    border-radius: 3px;
+}
+
+/* Style for the thought content */
+.thought-content {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* CSS for message timestamp */
+.message-timestamp {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+}
+
+/* CSS for thought timestamp */
+.thought-timestamp {
+  text-align: right;
+  font-size: 10px;
+  color: #999;
+}

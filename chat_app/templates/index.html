@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}<title>Chat App</title>{% endblock %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/custom_styles.css' %}">
+
+<body>
+    <div id="sidebar">
+        <ul>
+            {% block sidebar %}
+            <ul class="conversations">
+              <li class="conversation-list-item"><a href="{% url 'home' %}">Home</a></li>
+                {% for conversation in conversations %}
+                    <li class="conversation-list-item">
+                        <a href="{% url 'conversation_detail' conversation.id %}">{{ conversation.title }}</a>
+                    </li>
+                {% endfor %}
+                <li class="conversation-list-item">
+                  <form method="post" class="new-conversation-form">
+                    {% csrf_token %}
+                    {{ conversation_form.as_p }}
+                    <button type="submit" class="conversation-form-submit" name="conversation_form_submit">Create Conversation</button>
+                  </form>
+                </li>
+            </ul>
+            {% endblock %}
+        </ul>
+      </div>
+      <div id="content">
+          {% block content %}
+          {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+

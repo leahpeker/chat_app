@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+    <h1>Search results for messages with content: "{{ search_text }}"</h1>
+    <ul class="message-list">
+        {% for message in filtered_messages %}
+          <a href="{% url 'conversation_detail' message.conversation_id %}">{{ message.conversation.title }}</a>
+          <li class="message-item">
+              <div class="message-content">{{ message.text }}</div>
+              <div class="message-timestamp">{{ message.date_sent|date:"F d, Y H:i" }}</div>
+              <ul class="thought-list">
+                {% for thought in message.messagethought_set.all %}
+                  <li class="thought-item">
+                    <div class="thought-content">{{ thought.text }}</div>
+                    <div class="thought-timestamp">{{ thought.date_sent|date:"F d, Y H:i" }}</div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
