@@ -1,9 +1,5 @@
 <h3 align="center">chat app</h3>
 
-  <p align="center">
-    project_description
-  </p>
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
