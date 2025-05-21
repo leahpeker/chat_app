@@ -48,7 +48,7 @@ brew install python@3.10
 4. Activate virtual environment
 * Mac
   ```sh
-  source venv/bin/activate
+  source myenv/bin/activate
   ```
 * Windows
   ```sh
